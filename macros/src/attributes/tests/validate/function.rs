@@ -171,7 +171,7 @@ fn extract_cfgs(attrs: &[Attribute]) -> Vec<Attribute> {
 // NOTE doesn't check the parameters or the return type
 fn check_fn_sig(sig: &syn::Signature) -> Result<(), ()> {
     if sig.constness.is_none()
-        && sig.unsafety.is_none()
+        && !matches!(sig.safety, syn::Safety::Unsafe(_))
         && sig.abi.is_none()
         && sig.generics.params.is_empty()
         && sig.generics.where_clause.is_none()

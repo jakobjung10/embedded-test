@@ -15,6 +15,8 @@
       <sourceFolder url="file://$MODULE_DIR$/macros/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests-build/cases" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests-build/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/host_test/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/host_test/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/embedded-test-example/target" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/examples/esp32c6/target" />
@@ -22,6 +24,7 @@
       <excludeFolder url="file://$MODULE_DIR$/examples/std/target" />
       <excludeFolder url="file://$MODULE_DIR$/macros/target" />
       <excludeFolder url="file://$MODULE_DIR$/tests-build/target" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/host_test/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

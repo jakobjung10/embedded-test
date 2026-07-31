@@ -2,7 +2,7 @@
 use proc_macro::TokenStream;
 use proc_macro_error3::{abort, abort_call_site};
 use quote::quote;
-use syn::{parse_macro_input, Attribute, ItemFn, ReturnType};
+use syn::{parse_macro_input, Attribute, ItemFn, ReturnType, Safety};
 
 pub(crate) fn expand(args: TokenStream, item: TokenStream) -> TokenStream {
     if !args.is_empty() {
@@ -19,7 +19,7 @@ pub(crate) fn expand(args: TokenStream, item: TokenStream) -> TokenStream {
 fn validate(fun: &ItemFn) {
     if fun.sig.constness.is_some()
         || fun.sig.asyncness.is_some()
-        || fun.sig.unsafety.is_some()
+        || matches!(fun.sig.safety, Safety::Unsafe(_))
         || fun.sig.abi.is_some()
         || !fun.sig.generics.params.is_empty()
         || fun.sig.generics.where_clause.is_some()

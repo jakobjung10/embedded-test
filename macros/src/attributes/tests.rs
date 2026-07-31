@@ -10,7 +10,7 @@ mod validate;
 pub(crate) fn expand(args: TokenStream, input: TokenStream) -> TokenStream {
     let macro_args = match parse::MacroArgs::parse(args) {
         Ok(args) => args,
-        Err(e) => abort!(e),
+        Err(e) => abort!(e.span(), "{}", e),
     };
 
     let module = parse::Module::from(parse_macro_input!(input as ItemMod));
